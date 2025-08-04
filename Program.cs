@@ -1,26 +1,30 @@
 ﻿class program
 {
-    static int TicketPriceCalculator(int price, int age)
+    static string TriangleTypeIdentifier(int length, int width, int height)
     {
-
-        if (age <= 12)
+        if (length == width && width == height)
         {
-            price = price - 3;
-
+            return "Equilateral";
         }
-        else if (age >= 60)
+        else if (length == width || width == height || length == height)
         {
-            price = price - 3;
+            return "Isosceles";
         }
-        return price;
+        else
+        {
+            return "Scalene";
+        }
 
-        }
+    }
     static void Main(String[] args)
     {
-        int price = 10;
-        Console.WriteLine("Enter your age:");
-        int age = Convert.ToInt32(Console.ReadLine());
-        int finalPrice = TicketPriceCalculator(price, age);
-        Console.WriteLine("The final ticket price is: " + finalPrice);
+        Console.WriteLine("Enter the Length of the Triangle: ");
+        int length=Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter the Width of the Triangle: ");
+        int width=Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter the Height of the Triangle: ");
+        int height=Convert.ToInt32(Console.ReadLine());
+        string triangleType = TriangleTypeIdentifier(length, width, height);
+        Console.WriteLine("Triangle type is :" + triangleType);
     }
 }
